@@ -15,9 +15,15 @@ const calculateImpact = ({ region, ...input }, magnitude = 1) => {
   const currentlyInfected = input.reportedCases * 10 * magnitude;
   const infectionsByRequestedTime = currentlyInfected * (2 ** timeFactor);
 
+  const severeCasesByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.15);
+  const hospitalBedsByRequestedTime = Math.trunc(input.totalHospitalBeds * 0.35)
+    - severeCasesByRequestedTime;
+
   return {
     currentlyInfected,
-    infectionsByRequestedTime
+    infectionsByRequestedTime,
+    severeCasesByRequestedTime,
+    hospitalBedsByRequestedTime
   };
 };
 
