@@ -19,11 +19,19 @@ const calculateImpact = ({ region, ...input }, magnitude = 1) => {
   const hospitalBedsByRequestedTime = Math.trunc(input.totalHospitalBeds * 0.35)
     - severeCasesByRequestedTime;
 
+  const casesForICUByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.05);
+  const casesForVentilatorsByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.02);
+  const dollarsInFlight = Math.trunc((infectionsByRequestedTime * region.avgDailyIncomeInUSD
+    * region.avgDailyIncomePopulation) / days);
+
   return {
     currentlyInfected,
     infectionsByRequestedTime,
     severeCasesByRequestedTime,
-    hospitalBedsByRequestedTime
+    hospitalBedsByRequestedTime,
+    casesForICUByRequestedTime,
+    casesForVentilatorsByRequestedTime,
+    dollarsInFlight
   };
 };
 
