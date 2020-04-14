@@ -69,7 +69,7 @@
           id="reportedCases"
         />
       </div>
-      <button class="submit" data-go-estimate="data-go-estimate">Calculate</button>
+      <button class="submit" data-go-estimate="data-go-estimate">Submit</button>
     </form>
 
     <transition name="results">

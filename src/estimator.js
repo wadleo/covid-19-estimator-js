@@ -1,8 +1,7 @@
 const formatTimeToDays = ({ timeToElapse, periodType = 'days' }) => {
   if (periodType === 'months') {
     return timeToElapse * 30;
-  }
-  if (periodType === 'weeks') {
+  } else if (periodType === 'weeks') {
     return timeToElapse * 7;
   }
   return timeToElapse;
@@ -20,7 +19,7 @@ const calculateImpact = ({ region, ...input }, magnitude = 1) => {
     - severeCasesByRequestedTime;
 
   const casesForICUByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.05);
-  const casesForVentilatorsByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.02);
+  const casesForVentilatorsByRequestedTime = Math.ceil(infectionsByRequestedTime * 0.02);
   const dollarsInFlight = Math.trunc((infectionsByRequestedTime * region.avgDailyIncomeInUSD
     * region.avgDailyIncomePopulation) / days);
 
