@@ -1,9 +1,12 @@
 const formatTimeToDays = ({ timeToElapse, periodType = 'days' }) => {
   if (periodType === 'months') {
     return timeToElapse * 30;
-  } else if (periodType === 'weeks') {
+  }
+
+  if (periodType === 'weeks') {
     return timeToElapse * 7;
   }
+
   return timeToElapse;
 };
 
