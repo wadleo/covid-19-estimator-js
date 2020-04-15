@@ -186,12 +186,16 @@ export default {
     font-size: 18px;
   }
 
+  .form-input input {
+    font-size: 16px;
+  }
+
   button {
     padding: 5px;
     color: #fff;
     font-size: 18px;
     border-radius: 5px;
-    background: #bb5f5f;
+    background: #800080;
   }
 
   i {
@@ -201,6 +205,6 @@ export default {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    background: #bb5f5f;
+    background: #800080;
   }
 </style>
