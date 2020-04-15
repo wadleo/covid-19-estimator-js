@@ -73,4 +73,4 @@ export default {
     font-weight: 500;
     margin-right: 25px;
   }
-</style> 
+</style>

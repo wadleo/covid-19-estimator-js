@@ -29,7 +29,6 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   plugins: [
-    // make sure to include the plugin for the magic
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html',
